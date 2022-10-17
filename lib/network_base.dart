@@ -7,9 +7,19 @@ import 'package:http_interceptor/http/intercepted_client.dart';
 class BaseNetwork {
 
   Future<http.Response> httpGet(String url) async {
+    /*
+    {Accept: application/json, Content-Type: application/json, Access-Control-Allow-Origin: *, place: none, os: 3, : 43, }
+     */
+    String token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJ0IjoyLCJ1Ijo1NzM2ODQ3MjUwNTU0ODgwLCJpc3MiOiJ5dXR1IiwiZXhwIjoxNjY2NjQ2MTU3LCJvIjozfQ.9e2usifLPLJMbm7H3n3dlnCESUTo8zPhDhEE25-Pwnv3cCACh6luGp-MUECDVIqLmQNX3FOe0UvfGc6YfZA2Pg";
+    Map<String, String> headers = { "Accept": "application/json",  'Content-Type': 'application/json', "Access-Control-Allow-Origin" : "*"  };
+    headers["Authorization"] = "Bearer $token";
+    headers["bd"] = "43";
+    headers["os"] = "3";
+    headers["place"] = "none";
+    headers["place"] = "none";
+    http.Response res = await http.get(Uri.parse(url), headers: headers);
     print('-------------------- BaseNetwork http httpGet: $url');
-    http.Response res =  await http.get(Uri.parse(url), headers: { "Accept": "application/json",  'Content-Type': 'application/json', "Access-Control-Allow-Origin" : "*"  });
-    print("-----------------res: ${res.body}");
+     print("-----------------res: ${res.body}");
     return  res;
 
   }

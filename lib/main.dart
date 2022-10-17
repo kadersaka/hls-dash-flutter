@@ -53,13 +53,25 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+
             TextButton(
                 onPressed: (){
-                  BaseNetwork().httpGet("https://yutu-dev-api.ew.r.appspot.com/testcorsget");
+                  BaseNetwork().httpGet("https://yutu-dev-api.ew.r.appspot.com/active-places");
                 },
-                child:Text("GET /testcorsget"),
+                child:const Text("GET Places"),
             ),
 
+            TextButton(
+                onPressed: (){
+                  // BaseNetwork().httpGet("https://yutu-dev-api.ew.r.appspot.com/testcorsget");
+                },
+                child:const Text("GET /testcorsget"),
+            ),
+
+            /*
+            ---------------requesting http://adminapp.dahotourism.com/api/reservations?locale=fr
+I/flutter (19918): {circuit: /api/circuits_touristiques/8, referencePaiement: 9Z-EMaUpQ, dateCircuit: 2022-12-13T00:00:00.000, amount: null, user: /api/users/9}
+             */
             TextButton(
                 onPressed: (){
                   BaseNetwork().httpPut("https://yutu-dev-api.ew.r.appspot.com/active-places", {});
