@@ -16,7 +16,6 @@ class BaseNetwork {
     headers["bd"] = "43";
     headers["os"] = "3";
     headers["place"] = "none";
-    headers["place"] = "none";
     http.Response res = await http.get(Uri.parse(url), headers: headers);
     print('-------------------- BaseNetwork http httpGet: $url');
      print("-----------------res: ${res.body}");

@@ -1,13 +1,14 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:testflutter3/network_base.dart';
+import 'package:testflutter3/pages/welcome_page.dart';
 
 import 'firebase_options.dart';
 
 Future<void> main() async{
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  // await Firebase.initializeApp(
+  //   options: DefaultFirebaseOptions.currentPlatform,
+  // );
   runApp(const MyApp());
 }
 
@@ -20,7 +21,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: WelcomePage(),
+      // home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
