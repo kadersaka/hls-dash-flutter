@@ -78,7 +78,7 @@ class _WelcomePageState extends State<WelcomePage> {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => const UrlFoorm()),);
 
                 },
-                child: Text('Enter link')
+                child: Text('enter custom video url'.toUpperCase())
             ),
 
             const SizedBox(height: 50),

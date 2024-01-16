@@ -38,9 +38,7 @@ class _RafsanHlsSubtitlesPageState extends State<RafsanHlsSubtitlesPage> {
       overflowModalTextColor: Colors.white,
       overflowMenuIconsColor: Colors.white,
     );
-
-    BetterPlayerConfiguration betterPlayerConfiguration =
-        BetterPlayerConfiguration(
+    BetterPlayerConfiguration betterPlayerConfiguration = BetterPlayerConfiguration(
             controlsConfiguration: controlsConfiguration,
             aspectRatio: 16 / 9,
             fit: BoxFit.contain,
